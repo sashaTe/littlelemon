@@ -13,6 +13,11 @@
 		281266CD2AA22A1E0062170B /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 281266CC2AA22A1E0062170B /* Preview Assets.xcassets */; };
 		281266CF2AA22A1E0062170B /* Persistence.swift in Sources */ = {isa = PBXBuildFile; fileRef = 281266CE2AA22A1E0062170B /* Persistence.swift */; };
 		281266D22AA22A1E0062170B /* littleLemon.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 281266D02AA22A1E0062170B /* littleLemon.xcdatamodeld */; };
+		281266DB2AA25E5B0062170B /* Onboarding.swift in Sources */ = {isa = PBXBuildFile; fileRef = 281266DA2AA25E5B0062170B /* Onboarding.swift */; };
+		288DE0A32ABB61EC00E46457 /* UserProfile.swift in Sources */ = {isa = PBXBuildFile; fileRef = 288DE0A22ABB61EC00E46457 /* UserProfile.swift */; };
+		28D47CF02AA7B4B4008F3DB8 /* Home.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28D47CEF2AA7B4B4008F3DB8 /* Home.swift */; };
+		28D47CF22AA7B4E8008F3DB8 /* Menu.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28D47CF12AA7B4E8008F3DB8 /* Menu.swift */; };
+		28EDE8642ABB42B4000A8D24 /* ViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28EDE8632ABB42B4000A8D24 /* ViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -23,6 +28,11 @@
 		281266CC2AA22A1E0062170B /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		281266CE2AA22A1E0062170B /* Persistence.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Persistence.swift; sourceTree = "<group>"; };
 		281266D12AA22A1E0062170B /* littleLemon.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = littleLemon.xcdatamodel; sourceTree = "<group>"; };
+		281266DA2AA25E5B0062170B /* Onboarding.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Onboarding.swift; sourceTree = "<group>"; };
+		288DE0A22ABB61EC00E46457 /* UserProfile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserProfile.swift; sourceTree = "<group>"; };
+		28D47CEF2AA7B4B4008F3DB8 /* Home.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Home.swift; sourceTree = "<group>"; };
+		28D47CF12AA7B4E8008F3DB8 /* Menu.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Menu.swift; sourceTree = "<group>"; };
+		28EDE8632ABB42B4000A8D24 /* ViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,7 +66,8 @@
 			isa = PBXGroup;
 			children = (
 				281266C52AA22A1D0062170B /* littleLemonApp.swift */,
-				281266C72AA22A1D0062170B /* ContentView.swift */,
+				28EDE8622ABB42A1000A8D24 /* ViewModels */,
+				28D47CEE2AA7B08D008F3DB8 /* Views */,
 				281266C92AA22A1E0062170B /* Assets.xcassets */,
 				281266CE2AA22A1E0062170B /* Persistence.swift */,
 				281266D02AA22A1E0062170B /* littleLemon.xcdatamodeld */,
@@ -71,6 +82,26 @@
 				281266CC2AA22A1E0062170B /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		28D47CEE2AA7B08D008F3DB8 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				281266DA2AA25E5B0062170B /* Onboarding.swift */,
+				28D47CEF2AA7B4B4008F3DB8 /* Home.swift */,
+				28D47CF12AA7B4E8008F3DB8 /* Menu.swift */,
+				281266C72AA22A1D0062170B /* ContentView.swift */,
+				288DE0A22ABB61EC00E46457 /* UserProfile.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		28EDE8622ABB42A1000A8D24 /* ViewModels */ = {
+			isa = PBXGroup;
+			children = (
+				28EDE8632ABB42B4000A8D24 /* ViewModel.swift */,
+			);
+			path = ViewModels;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -145,8 +176,13 @@
 			files = (
 				281266CF2AA22A1E0062170B /* Persistence.swift in Sources */,
 				281266D22AA22A1E0062170B /* littleLemon.xcdatamodeld in Sources */,
+				28D47CF22AA7B4E8008F3DB8 /* Menu.swift in Sources */,
 				281266C82AA22A1D0062170B /* ContentView.swift in Sources */,
 				281266C62AA22A1D0062170B /* littleLemonApp.swift in Sources */,
+				28D47CF02AA7B4B4008F3DB8 /* Home.swift in Sources */,
+				28EDE8642ABB42B4000A8D24 /* ViewModel.swift in Sources */,
+				281266DB2AA25E5B0062170B /* Onboarding.swift in Sources */,
+				288DE0A32ABB61EC00E46457 /* UserProfile.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -283,6 +319,7 @@
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -312,6 +349,7 @@
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
