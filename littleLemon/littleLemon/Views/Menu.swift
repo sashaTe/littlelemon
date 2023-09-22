@@ -187,7 +187,7 @@ struct Menu: View {
     }
     
     func getMenuData() async throws {
-        print("getMenu called")
+//        print("getMenu called")
         deleteDishes()
         let urlString = "https://raw.githubusercontent.com/Meta-Mobile-Developer-PC/Working-With-Data-API/main/menu.json"
         guard let url = URL(string: urlString) else {print("bad url")
@@ -205,7 +205,7 @@ struct Menu: View {
             for menuItem in menuList.menu {
                 let dish = DishEntity(context: context)
                 dish.title = menuItem.title
-                print(menuItem.info)
+//                print(menuItem.info)
                 dish.price = menuItem.price
                 dish.image = menuItem.image
                 dish.info = menuItem.info
