@@ -114,11 +114,9 @@ struct Onboarding: View {
                         UserDefaults.standard.set(lastName, forKey: kLastName)
                         UserDefaults.standard.set(email, forKey: kEmail)
                         UserDefaults.standard.set(true, forKey: kIsLoggedIn)
-    //                    UserDefaults.standard.synchronize()
                         
                         isLoggedIn = true
                         
-    //                    isActive = true
                 } label: {
                     Text("Register")
                         .foregroundColor(.theme.accent)
@@ -135,7 +133,6 @@ struct Onboarding: View {
                 .padding(.top, 50)
                 
                 .opacity(isInfoEntered ? 1.0 : 0.3)
-    //            Spacer()
              
                 NavigationLink(destination: Home(
                     firstName: UserDefaults.standard.string(forKey: kFirstName) ?? "no name🫣",
