@@ -25,37 +25,128 @@ struct Onboarding: View {
     var isInfoEntered: Bool {return !firstName.isEmpty && !lastName.isEmpty && !email.isEmpty}
     
     var body: some View {
-        VStack(spacing: 20){
-            TextField("First Name", text: $firstName)
-            TextField("Last Name", text: $lastName)
-            TextField("E-mail", text: $email)
-            
-            
-            Button {
-                guard isInfoEntered else {return}
-                    UserDefaults.standard.set(firstName, forKey: kFirstName)
-                    UserDefaults.standard.set(lastName, forKey: kLastName)
-                    UserDefaults.standard.set(email, forKey: kEmail)
-                    UserDefaults.standard.set(true, forKey: kIsLoggedIn)
-//                    UserDefaults.standard.synchronize()
-                    isLoggedIn = true
-//                    isActive = true
-            } label: {
-                Text("Register")
+        VStack(spacing: 0){
+            Image("Logo")
+                .frame(height: 50)
+            ScrollView {
+                ZStack(alignment: .leading) {
+                    Rectangle()
+                        .fill(Color.theme.accent)
+                        .frame(height: 320)
+                        VStack(alignment: .leading) {
+                            Text("Little Lemon")
+                                .font(Font.custom("Georgia", size: 40))
+                                .fontWeight(.bold)
+                                .foregroundColor(.theme.yellow)
+                                
+                            Text("Chicago")
+                                .font(Font.custom("Georgia", size: 30))
+                                .fontWeight(.bold)
+                                .foregroundColor(.theme.white)
+                                HStack {
+                                    Text("We are a family owned Mediterranean restaurant, focused on traditional recipes served with a modern twist.")
+                                        .font(Font.custom("Georgia", size: 18))
+                                        .frame(width: 200, height: 150)
+                                        .foregroundColor(.theme.white)
+                                    
+                                    RoundedRectangle(cornerRadius: 18)
+                                        .aspectRatio(contentMode: .fit)
+                                        .frame(width: 150, height: 150, alignment: .top)
+                                        
+                                        .overlay {
+                                            Image("Hero image")
+                                                .resizable()
+                                                .aspectRatio(contentMode: .fill)
+                                        }
+                                        .clipShape(Rectangle())
+                                    .cornerRadius(18)
+                                
+                                }
+                                .padding(.bottom)
+    //                      MARK: SEARCHBAR
+
+                            
+                            
+                        }
+                        .padding(.leading)
+
+                          
+                    
+                   
+                }
+                .padding(.bottom)
+              
+                VStack(spacing: 30) {
+                    TextField("First Name*", text: $firstName)
+                        .padding(.leading)
+                        .overlay {
+                            RoundedRectangle(cornerRadius: 5)
+                                .stroke(lineWidth: 1)
+                                .frame(height: 40)
+                                .foregroundColor(.theme.gray)
+                        }
+                    TextField("Last Name*", text: $lastName)
+                        .padding(.leading)
+                        .overlay {
+                            RoundedRectangle(cornerRadius: 5)
+                                .stroke(lineWidth: 1)
+                                .frame(height: 40)
+                                .foregroundColor(.theme.gray)
+                        }
+                    TextField("E-mail*", text: $email)
+                        .textInputAutocapitalization(.none)
+                        .keyboardType(.emailAddress)
+                        .padding(.leading)
+                                .overlay {
+                                    RoundedRectangle(cornerRadius: 5)
+                                        .stroke(lineWidth: 1)
+                                        .frame(height: 40)
+                                        .foregroundColor(.theme.gray)
+                                }
+                                .onDisappear{print("onboarding dissapear")}
+                }
+                .padding(.horizontal)
+                
+                
+                Button {
+                    guard isInfoEntered else {return}
+                        UserDefaults.standard.set(firstName, forKey: kFirstName)
+                        UserDefaults.standard.set(lastName, forKey: kLastName)
+                        UserDefaults.standard.set(email, forKey: kEmail)
+                        UserDefaults.standard.set(true, forKey: kIsLoggedIn)
+    //                    UserDefaults.standard.synchronize()
+                        
+                        isLoggedIn = true
+                        
+    //                    isActive = true
+                } label: {
+                    Text("Register")
+                        .foregroundColor(.theme.accent)
+                        .font(Font.system(size: 16, weight: .medium))
+                }
+                .frame(maxWidth: .infinity)
+                .frame(height: 50)
+                
+                .background(
+                RoundedRectangle(cornerRadius: 10)
+                    .foregroundColor(.theme.yellow)
+                )
+                .padding(.horizontal)
+                .padding(.top, 50)
+                
+                .opacity(isInfoEntered ? 1.0 : 0.3)
+    //            Spacer()
+             
+                NavigationLink(destination: Home(
+                    firstName: UserDefaults.standard.string(forKey: kFirstName) ?? "no name🫣",
+                    lastName: UserDefaults.standard.string(forKey: kLastName) ?? "no lastname🫣",
+                    email: UserDefaults.standard.string(forKey: kEmail) ?? "no email"
+                ), isActive: $isLoggedIn) {
+                }
+                Spacer()
             }
-            .buttonStyle(.borderedProminent)
-            .tint(.yellow)
-            .opacity(isInfoEntered ? 1.0 : 0.3)
-            
-            NavigationLink(destination: Home(
-                firstName: UserDefaults.standard.string(forKey: kFirstName) ?? "no name🫣",
-                lastName: UserDefaults.standard.string(forKey: kLastName) ?? "no lastname🫣",
-                email: UserDefaults.standard.string(forKey: kEmail) ?? "no email"
-            ), isActive: $isLoggedIn) {
-                EmptyView()
             }
-        }
-        .padding(.horizontal)
+        .navigationBarHidden(true)
         .onAppear {
             if UserDefaults.standard.bool(forKey: kIsLoggedIn) {
                 isLoggedIn = true

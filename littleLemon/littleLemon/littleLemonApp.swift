@@ -9,21 +9,19 @@ import SwiftUI
 
 @main
 struct littleLemonApp: App {
-    let persistenceController = PersistenceController.shared
     @StateObject private var vm = ViewModel()
+    @AppStorage(kIsLoggedIn)var isLoggedIn = false
     var body: some Scene {
+        
         WindowGroup {
-            NavigationView {
-//                if !UserDefaults.standard.bool(forKey: kIsLoggedIn) {
-                     Onboarding()
+            if !isLoggedIn {
+                NavigationView {
+                    Onboarding()
                         .environmentObject(vm)
-                        .environment(\.managedObjectContext, persistenceController.container.viewContext)
-//                } else {
-//                    Home()
-//                        .environmentObject(vm)
-//                        .environment(\.managedObjectContext, persistenceController.container.viewContext)
-//                }
-                    
+                        .environment(\.managedObjectContext, PersistenceController.shared.container.viewContext)
+                }
+            } else {
+                Home()
             }
         }
     }
