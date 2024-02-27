@@ -17,11 +17,6 @@ LittleLemon was created as the final project for the Meta iOS Developer Professi
 
 ## Screenshots
 
-![Simulator Screenshot - iPhone 15 Pro - 2024-02-27 at 13 47 56](https://github.com/sashaTe/littlelemon/assets/116722794/ed474cab-a3f2-463a-8353-ca8ff1133f4d)
-![Simulator Screenshot - iPhone 15 Pro - 2024-02-27 at 13 48 24](https://github.com/sashaTe/littlelemon/assets/116722794/f841503f-6415-4122-8e76-c37bed5ac4b8)
-![Simulator Screenshot - iPhone 15 Pro - 2024-02-27 at 13 48 56](https://github.com/sashaTe/littlelemon/assets/116722794/079de48a-b898-4793-b80c-24105fa129d1)
-![Simulator Screenshot - iPhone 15 Pro - 2024-02-27 at 13 50 39](https://github.com/sashaTe/littlelemon/assets/116722794/a48adca5-5698-45dd-9a06-c007ec1dee2a)
-
 <div align="center">
   <img src="https://github.com/sashaTe/littlelemon/assets/116722794/ed474cab-a3f2-463a-8353-ca8ff1133f4d.png" alt="Screenshot 1" width="25%">
   <img src="https://github.com/sashaTe/littlelemon/assets/116722794/f841503f-6415-4122-8e76-c37bed5ac4b8.png" alt="Screenshot 2" width="25%">
